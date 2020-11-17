@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Elon joylash::Elon doskasi</title>
+    </head>
+
+    <body>
+        <h1>Elon joylash</h1>
+        <div>
+            <a href="{% url 'index' %}">Asosiy</a>
+            {% for rubric in rubrics %}
+            <a href="{% url 'by_rubric' rubric.pk %}">{{ rubric.name }}</a>
+            {% endfor %}
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Qo`shish">
+        </form>
+    </body>
+</html>
